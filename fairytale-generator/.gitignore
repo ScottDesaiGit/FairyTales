@@ -4,9 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-fairytale-generator/node_modules/*
-fairytale-generator/backend/node_modules/*
-# testing
+node_modules
 /coverage
 
 # production
