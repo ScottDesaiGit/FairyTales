@@ -10,7 +10,6 @@ function App() {
   useEffect(() => {
     // Listen for messages from the server
     socket.on('message', (data) => {
-      console.log(data)
       // setMessage(data);
     });
 

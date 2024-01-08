@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 .App {
   text-align: center;
 }
@@ -35,4 +36,178 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+:root {
+  --text_white: #1a1110;
+  --bg_main: #101027;
+  --text_light: #fff;
+  --text_med: #53627c;
+  --text_dark: #1e2432;
+  --red: #ff1e42;
+  --darkred: #530606;
+  --orange: #2c839e;
+}
+
+body {
+  margin: 0;
+  /*background-color: var(--bg_main);*/
+  /*background-image: url("https://www.myfreetextures.com/wp-content/uploads/2011/06/another-rough-old-and-worn-parchment-paper.jpg");*/
+  background-image: url("images/Continents.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  color: var(--text_white);
+}
+div {
+  display: block;
+  text-align: center;
+  padding-top: 10px;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  color: var(--text_white);
+}
+label {
+  cursor: pointer;
+  color: var(--text_white);
+  display: block;
+  padding: 0px;
+  margin: 3px;
+  font-size: 20px;
+}
+input[type="text"] {
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  width: 30%;
+  padding: 5px 20px;
+  margin: 30px 50px 10px 100px;
+  box-sizing: border-box;
+  color: #000000;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.02em;
+}
+button {
+  background-color: var(--darkred); /*!* Green *!*/
+  background-size: cover;
+  border: none;
+  color: white;
+  padding: 20px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  width: 200px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  border-radius: 20px;
+  margin: auto;
+  cursor: pointer;
+}
+button:hover {
+  background-color: rgb(0, 0, 0);
+}
+button:disabled {
+  background-color: #1e2432;
+  cursor: auto;
+}
+.round-button {
+  background-color: var(--darkred); /*!* Green *!*/
+  border: none;
+  color: white;
+  padding: 20px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline;
+  width: 200px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  border-radius: 20px;
+  margin-left: 20px;
+}
+
+.help {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+  background-color: #2196f3;
+  padding: 10px;
+}
+
+.help > div {
+  background-color: #2196f3;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.lost {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+  background-color: #ff0000;
+  padding: 10px;
+}
+
+.lost > div {
+  background-color: #ff0000;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.page-footer {
+  text-align: left;
+  font-size: 14px;
+  color: white;
+  margin-top: 400px;
+  width: 800px;
+  position: absolute;
+  right: 0px;
+}
+
+.logo {
+  color: var(--text_white);
+  /*background-color: var(--bg_main);*/
+  font-family: "Great Vibes";
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  letter-spacing: 0.02em;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  text-align: center;
+}
+
+.column {
+  padding: 16px;
+  height: 250px;
+  margin: 5px;
+  background-color: #cccccc;
+}
+
+.addToRoundButtons {
+  justify-content: center;
+}
+
+table {
+  width: 100%;
+}
+
+td {
+  text-align: center;
+}
+
+th {
+  text-align: center;
 }

@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import socket from "../services/socket.service"; // Import the socket instance
 
 const MyComponent = () => {
-  const [message, setMessage] = useState('');
+  const [message, setMessage, prevMessage] = useState('');
 
   useEffect(() => {
     // Function to handle the message event
     const handleMessage = (newMessage) => {
-		console.log(newMessage)
-		setMessage(newMessage);
+      console.log(newMessage)
+      console.log(message)
+      setMessage(prevMessage => prevMessage + newMessage);
 	  };
   
 	  // Listen for messages from the server

@@ -12,35 +12,42 @@ const openai = new OpenAI({
 io.on('connection', (socket) => {
   console.log('A user connected');
 
-  // Emitting data to the client
-  socket.emit('message', 'Hello from the server!');
-
   // Handling disconnection
   socket.on('disconnect', () => {
     console.log('A user disconnected');
   });
 });
 async function generateFairytale() {
-	console.log(io.engine.clientsCount)
-	io.emit("message", "to all clients")
-	const stream = await openai.beta.chat.completions.stream({
-	  model: 'gpt-3.5-turbo',
-	  messages: [{ role: 'user', content: 'Write a fairytale' }],
-	  stream: true,
-	});
+	let wordCount = 0
+	let wordArr = []
+	try{
+		const stream = await openai.beta.chat.completions.stream({
+		model: 'gpt-3.5-turbo',
+		messages: [{ role: 'user', content: 'Write a fairytale' }],
+		stream: true,
+		});
+	
+		stream.on('content', (delta, snapshot) => {
+			console.log(delta);
+			wordCount++;
+			wordArr.push(delta)
+			if(wordCount % 20 == 0){
+				let currSentence = wordArr.slice((wordCount - 10)).join("")
+				io.emit("message", currSentence)
+			}
+		});
+	
+		let chatCompletion = await stream.finalChatCompletion();
+		await generateFairyTalePicture(chatCompletion.choices[0].message.content)
+	}catch(err){
+		console.log(err)
+	}
   
-	stream.on('content', (delta, snapshot) => {
-		console.log(delta);
-		io.emit("message", delta)
-	});
-  
-	let chatCompletion = await stream.finalChatCompletion();
-	await generateFairyTalePicture(chatCompletion.choices[0].message.content)
 }
 
 async function generateFairyTalePicture(fairyTaleStory){
 	console.log("Generating the image")
-	let prompt = "Generate a painting representing the following fairy tale: " + fairyTaleStory
+	let prompt = "Generate a singular painting representing the following fairy tale with no text or borders: " + fairyTaleStory
 	console.log(prompt)
 	try{
 		let response = await openai.images.generate({

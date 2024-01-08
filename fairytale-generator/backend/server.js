@@ -32,18 +32,6 @@ const io = socketIO(server,
     }
   })
 
-// io.on('connection', (socket) => {
-//   console.log('A user connected');
-
-//   // Emitting data to the client
-//   socket.emit('message', 'Hello from the server!');
-
-//   // Handling disconnection
-//   socket.on('disconnect', () => {
-//     console.log('A user disconnected');
-//   });
-// });
-
 module.exports = io
 const exercisesRouter = require('./routes/exercises');
 const usersRouter = require('./routes/users');
