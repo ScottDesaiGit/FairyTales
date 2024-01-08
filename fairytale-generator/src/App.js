@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import FairyTale from "./components/fairy-tale.component";
 import SocketComponent from "./components/socket.component"
+import ImageComponent from "./components/image.component"
 import socket from "./services/socket.service"
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
     <div className="app">
       <FairyTale></FairyTale>
       <SocketComponent></SocketComponent>
+      <ImageComponent></ImageComponent>
     </div>
     // <div className="App">
     //   <header className="App-header">

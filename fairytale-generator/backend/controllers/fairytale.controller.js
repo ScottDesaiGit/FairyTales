@@ -59,6 +59,7 @@ async function generateFairyTalePicture(fairyTaleStory){
 
 		let image_url = response.data[0].url
 		console.log("Image: " + image_url)
+		io.emit("newImage", image_url)
 	}catch(err){
 		console.log(err)
 	}
