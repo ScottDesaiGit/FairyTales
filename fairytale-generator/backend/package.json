@@ -15,9 +15,11 @@
     "cors": "^2.8.5",
     "dotenv": "^8.6.0",
     "express": "^4.16.4",
+    "http": "^0.0.1-security",
     "mongoose": "^5.5.7",
     "node": "^21.2.0",
     "openai": "^4.24.1",
-    "readline-sync": "^1.4.10"
+    "readline-sync": "^1.4.10",
+    "socket.io": "^4.7.3"
   }
 }

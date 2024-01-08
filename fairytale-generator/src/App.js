@@ -1,11 +1,28 @@
-import React from 'react'
+import React, { useEffect} from 'react'
 import logo from './logo.svg';
 import './App.css';
 import FairyTale from "./components/fairy-tale.component";
+import SocketComponent from "./components/socket.component"
+import socket from "./services/socket.service"
 
 function App() {
+  
+  useEffect(() => {
+    // Listen for messages from the server
+    socket.on('message', (data) => {
+      console.log(data)
+      // setMessage(data);
+    });
+
+    // Clean up the effect
+    return () => socket.off('message');
+  }, []);
+
   return (
-    <FairyTale></FairyTale>
+    <div className="app">
+      <FairyTale></FairyTale>
+      <SocketComponent></SocketComponent>
+    </div>
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
