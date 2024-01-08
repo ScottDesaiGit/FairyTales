@@ -34,14 +34,29 @@ async function generateFairytale() {
 		io.emit("message", delta)
 	});
   
-	// or, equivalently:
-	for await (const chunk of stream) {
-	//   process.stdout.write(chunk.choices[0]?.delta?.content || '');
+	let chatCompletion = await stream.finalChatCompletion();
+	await generateFairyTalePicture(chatCompletion.choices[0].message.content)
+}
+
+async function generateFairyTalePicture(fairyTaleStory){
+	console.log("Generating the image")
+	let prompt = "Generate a painting representing the following fairy tale: " + fairyTaleStory
+	console.log(prompt)
+	try{
+		let response = await openai.images.generate({
+			model: "dall-e-3",
+			prompt: prompt,
+			n: 1,
+			size: "1024x1024",
+		})
+
+		let image_url = response.data[0].url
+		console.log("Image: " + image_url)
+	}catch(err){
+		console.log(err)
 	}
-  
-	const chatCompletion = await stream.finalChatCompletion();
-	console.log(chatCompletion); // {id: "…", choices: […], …}
-	console.log(chatCompletion.choices[0].message.content)
+
+	
 }
 
 module.exports.generateFairytale = generateFairytale;
