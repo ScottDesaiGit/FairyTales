@@ -18,7 +18,7 @@ const FairytaleGenerator = () => {
 
   return (
     <div>
-      <button onClick={generateFairytale}>Generate Fairytale</button>
+      <button className="button-fairytale" onClick={generateFairytale}>Generate Fairytale</button>
       <p>{fairytale}</p>
       {imageUrl && <img src={imageUrl} alt="Fairytale" />}
     </div>

@@ -180,7 +180,7 @@ button:disabled {
   font-family: "Tangerine", cursive;
   text-align: center;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 50px;
   letter-spacing: 0.02em;
 }
 
@@ -221,4 +221,30 @@ textarea {
   font-family: "Garamond";
   font-size: 24px;
   letter-spacing: 0.02em;
+}
+
+.button-fairytale {
+  background-color: #7b4397; /* deep purple */
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Tangerine';
+  font-size: 30px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: all 0.3s;
+  line-height: 1.2;
+  box-sizing: border-box;
+  min-width: 20rem;
+}
+
+.button-fairytale:hover {
+  background-color: #6a2c70; /* slightly darker purple */
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+  transform: scale(1.05);
 }
