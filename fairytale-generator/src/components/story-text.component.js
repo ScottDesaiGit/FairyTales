@@ -22,8 +22,8 @@ const MyComponent = () => {
   }, []);
 
   return (
-    <div>
-      <p>Received Message: {message}</p>
+    <div className="story-text-container">
+      <p>{message}</p>
     </div>
   );
 };

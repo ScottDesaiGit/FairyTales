@@ -17,7 +17,7 @@ const MyComponent = () => {
 
   return (
     <div>
-		<img src={imageUrl} alt = "Dynamic" />
+      {imageUrl && <img src={imageUrl} alt="FairyTale Description" />}
     </div>
   );
 };

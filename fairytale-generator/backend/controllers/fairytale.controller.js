@@ -32,12 +32,13 @@ async function generateFairytale() {
 			wordCount++;
 			wordArr.push(delta)
 			if(wordCount % 20 == 0){
-				let currSentence = wordArr.slice((wordCount - 10)).join("")
+				let currSentence = wordArr.slice((wordCount - 20)).join("")
 				io.emit("message", currSentence)
 			}
 		});
 	
 		let chatCompletion = await stream.finalChatCompletion();
+		io.emit("message", wordArr.slice(wordCount - (wordCount % 20)).join(""))
 		await generateFairyTalePicture(chatCompletion.choices[0].message.content)
 	}catch(err){
 		console.log(err)

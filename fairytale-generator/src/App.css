@@ -248,3 +248,13 @@ textarea {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
   transform: scale(1.05);
 }
+
+.story-text-container {
+  width: 75%;
+  margin: auto; /* Centers the div */
+}
+
+.story-text-container p {
+  font-size: 32px; /* Increase font size as needed */
+  line-height: 2; /* Increase line spacing as needed */
+}
