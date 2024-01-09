@@ -96,43 +96,7 @@ input[type="text"] {
   font-size: 24px;
   letter-spacing: 0.02em;
 }
-button {
-  background-color: var(--darkred); /*!* Green *!*/
-  background-size: cover;
-  border: none;
-  color: white;
-  padding: 20px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: block;
-  width: 200px;
-  font-size: 15px;
-  transition-duration: 0.4s;
-  border-radius: 20px;
-  margin: auto;
-  cursor: pointer;
-}
-button:hover {
-  background-color: rgb(0, 0, 0);
-}
-button:disabled {
-  background-color: #1e2432;
-  cursor: auto;
-}
-.round-button {
-  background-color: var(--darkred); /*!* Green *!*/
-  border: none;
-  color: white;
-  padding: 20px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline;
-  width: 200px;
-  font-size: 15px;
-  transition-duration: 0.4s;
-  border-radius: 20px;
-  margin-left: 20px;
-}
+
 
 .help {
   display: grid;
@@ -257,4 +221,40 @@ textarea {
 .story-text-container p {
   font-size: 32px; /* Increase font size as needed */
   line-height: 2; /* Increase line spacing as needed */
+}
+
+.text-area-story {
+  width: 70%;
+  text-align: center;
+}
+
+.story-text-div {
+  font-size: 40px;
+  line-height: 1.6;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2rem;
+  /* height: 100vh; Adjust as needed */
+}
+
+.nav-button {
+  margin: 0 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px; /* Adjust size as needed */
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  &:disabled {
+    color: #808080; /* A darker shade of gray for better visibility */
+    cursor: not-allowed; /* Optional: shows a different cursor to indicate the button is disabled */
+  }
 }
