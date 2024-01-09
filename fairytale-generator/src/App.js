@@ -2,9 +2,11 @@ import React, { useEffect} from 'react'
 import logo from './logo.svg';
 import './App.css';
 import FairyTale from "./components/fairy-tale.component";
+import StoryForm from "./components/story-form.component";
 import SocketComponent from "./components/socket.component"
 import ImageComponent from "./components/image.component"
 import socket from "./services/socket.service"
+
 
 function App() {
   
@@ -20,6 +22,7 @@ function App() {
 
   return (
     <div className="app">
+      <StoryForm></StoryForm>
       <FairyTale></FairyTale>
       <SocketComponent></SocketComponent>
       <ImageComponent></ImageComponent>

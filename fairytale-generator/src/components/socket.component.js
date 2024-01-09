@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import socket from "../services/socket.service"; // Import the socket instance
-import "../App.css"
 
 const MyComponent = () => {
   const [message, setMessage, prevMessage] = useState('');

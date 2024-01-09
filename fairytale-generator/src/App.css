@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
 .App {
   text-align: center;
 }
@@ -69,8 +69,9 @@ div {
   display: block;
   text-align: center;
   padding-top: 10px;
-  font-family: "Arial Black", Gadget, sans-serif;
-  font-size: 18px;
+  font-family: "Tangerine";
+  font-size: 32px;
+  font-weight: bold;
   letter-spacing: 0.02em;
   color: var(--text_dark);
 }
@@ -80,7 +81,7 @@ label {
   display: block;
   padding: 0px;
   margin: 3px;
-  font-size: 20px;
+  font-size: 32px;
 }
 input[type="text"] {
   border: 0;
@@ -90,9 +91,9 @@ input[type="text"] {
   padding: 5px 20px;
   margin: 30px 50px 10px 100px;
   box-sizing: border-box;
-  color: #000000;
-  font-family: "Arial Black", Gadget, sans-serif;
-  font-size: 20px;
+  color: var(--text_dark);
+  font-family: "Garamond";
+  font-size: 24px;
   letter-spacing: 0.02em;
 }
 button {
@@ -176,7 +177,7 @@ button:disabled {
 .logo {
   color: var(--text_white);
   /*background-color: var(--bg_main);*/
-  font-family: "Great Vibes";
+  font-family: "Tangerine", cursive;
   text-align: center;
   font-weight: bold;
   font-size: 40px;
@@ -210,4 +211,14 @@ td {
 
 th {
   text-align: center;
+}
+
+textarea {
+  width: 100%;
+  max-width: 50rem;
+  height: 10rem;
+  color: var(--text_dark);
+  font-family: "Garamond";
+  font-size: 24px;
+  letter-spacing: 0.02em;
 }
