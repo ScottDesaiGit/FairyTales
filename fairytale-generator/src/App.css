@@ -83,19 +83,7 @@ label {
   margin: 3px;
   font-size: 32px;
 }
-input[type="text"] {
-  border: 0;
-  outline: 0;
-  border-bottom: 1px solid rgb(255, 255, 255);
-  width: 30%;
-  padding: 5px 20px;
-  margin: 30px 50px 10px 100px;
-  box-sizing: border-box;
-  color: var(--text_dark);
-  font-family: "Garamond";
-  font-size: 24px;
-  letter-spacing: 0.02em;
-}
+
 
 
 .help {
@@ -177,7 +165,30 @@ th {
   text-align: center;
 }
 
+input[type="text"]{
+  border: 2px solid #8B4513; /* A dark brown border */
+  font-family: 'Times New Roman', serif; /* A classic font style */
+  background-color: #FAEBD7; /* Light parchment color */
+  margin: 10px 10px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  transition: border-color 0.3s;
+  width: 30%;
+  padding: 5px 20px;
+  color: var(--text_dark);
+  font-family: "Garamond";
+  font-size: 24px;
+  letter-spacing: 0.02em;
+}
+
 textarea {
+  border: 2px solid #8B4513; /* A dark brown border */
+  font-family: 'Times New Roman', serif; /* A classic font style */
+  background-color: #FAEBD7; /* Light parchment color */
+  color: #000000; /* Dark text color */
+  padding: 10px;
+  margin: 5px 0;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  transition: border-color 0.3s;
   width: 100%;
   max-width: 50rem;
   height: 10rem;
@@ -187,6 +198,13 @@ textarea {
   letter-spacing: 0.02em;
 }
 
+input[type="text"]:focus{
+  border-color: #A0522D; /* A slightly darker border on focus */
+}
+
+textarea:focus {
+  border-color: #A0522D; /* A slightly darker border on focus */
+}
 .button-fairytale {
   background-color: #7b4397; /* deep purple */
   border: none;
@@ -257,59 +275,4 @@ textarea {
     color: #808080; /* A darker shade of gray for better visibility */
     cursor: not-allowed; /* Optional: shows a different cursor to indicate the button is disabled */
   }
-}
-
-
-/* @keyframes burnOff {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-    color: black;
-    text-shadow: none;
-  }
-  30% {
-    color: darkorange;
-    text-shadow: 0 0 10px red, 0 0 20px yellow;
-  }
-  70% {
-    color: red;
-    text-shadow: 0 0 15px darkred, 0 0 30px orange;
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.9) translateY(-10px);
-    color: darkred;
-    text-shadow: 0 0 20px black, 0 0 40px maroon;
-  }
-}
-
-.burn-off {
-  animation: burnOff 1.5s ease-out forwards;
-} */
-@keyframes eraseEffect {
-  from {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-  to {
-    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-  }
-}
-
-.erase {
-  animation: eraseEffect 1.5s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-  }
-  to {
-    opacity: 1;
-    text-shadow: none;
-  }
-}
-
-.fade-in {
-  animation: fadeIn 1s ease-in forwards;
 }

@@ -25,16 +25,16 @@ const MyComponent = () => {
   };
 
   // Function to change page with burn-off animation
-  const changePageWithAnimation = (newPage) => {
-    setBurnout(true);
+  const changePageWithAnimation = (newPage, direction) => {
+    setBurnout(direction);
     setTimeout(() => {
       setCurrentPage(newPage);
       setBurnout(false);
-      setFadeIn(true);
+      setFadeIn(direction);
       setTimeout(() => {
         setFadeIn(false);
       }, 1000); // Duration of the fade-in animation
-    }, 1500); // Duration of the burn-off animation
+    }, 1000); // Duration of the burn-off animation
   };
 
   useEffect(() => {
@@ -56,34 +56,20 @@ const MyComponent = () => {
 
   const nextPage = () => {
     if(currentPage < pages.length - 1){
-      changePageWithAnimation(currentPage + 1);
+      changePageWithAnimation(currentPage + 1, 'left-to-right');
     }
-    // setAnimate(true);
-    // if (currentPage < pages.length - 1) {
-    //   setTimeout(() => {
-    //     setCurrentPage(currentPage + 1);
-    //     setAnimate(false);
-    //   }, 1000); // Duration of the animation
-    // }
   };
 
   const prevPage = () => {
     if (currentPage > 0) {
-      changePageWithAnimation(currentPage - 1);
+      changePageWithAnimation(currentPage - 1, 'right-to-left');
     }
-
-    // setAnimate(true);
-    // if (currentPage > 0) {
-    //   setTimeout(() => {
-    //     setCurrentPage(currentPage - 1);
-    //     setAnimate(false);
-    //   }, 1000); // Duration of the animation
-    // }
   };
 
   return (
     <div>
-      <div className={`container ${burnout ? 'erase' : fadeIn ? 'fade-in' : ''}`}>
+    <div className={`container ${burnout === 'left-to-right' ? 'burnout-left-to-right' : burnout === 'right-to-left' ? 'burnout-right-to-left' : 
+    fadeIn === 'left-to-right' ? 'fadeIn-left-to-right' : fadeIn === 'right-to-left' ? 'fadeIn-right-to-left' : ''}`}>
       <button className="nav-button" onClick={prevPage} disabled={currentPage === 0}> <i className="fas fa-arrow-left"></i> {/* Font Awesome Left Arrow */} </button>      
       <div className="text-area-story">
 

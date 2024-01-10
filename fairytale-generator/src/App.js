@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from 'react'
 import logo from './logo.svg';
 import './App.css';
+import './Animation.css';
 import FairyTale from "./components/fairy-tale.component";
 import StoryForm from "./components/story-form.component";
 import StoryTextComponent from "./components/story-text.component"
