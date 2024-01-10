@@ -5,6 +5,11 @@ const MyComponent = () => {
   const [message, setMessage] = useState('');
   const [pages, setPages] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
+  const [burnout, setBurnout] = useState(false);
+  const [fadeIn, setFadeIn] = useState(false);
+  const [tempPage, setTempPage] = useState(null);
+
+
 
   // Function to split the message into pages
   const splitIntoPages = (updatedMessage) => {
@@ -17,6 +22,19 @@ const MyComponent = () => {
     }
 
     setPages(newPages);
+  };
+
+  // Function to change page with burn-off animation
+  const changePageWithAnimation = (newPage) => {
+    setBurnout(true);
+    setTimeout(() => {
+      setCurrentPage(newPage);
+      setBurnout(false);
+      setFadeIn(true);
+      setTimeout(() => {
+        setFadeIn(false);
+      }, 1000); // Duration of the fade-in animation
+    }, 1500); // Duration of the burn-off animation
   };
 
   useEffect(() => {
@@ -37,20 +55,35 @@ const MyComponent = () => {
   }, [message]);
 
   const nextPage = () => {
-    if (currentPage < pages.length - 1) {
-      setCurrentPage(currentPage + 1);
+    if(currentPage < pages.length - 1){
+      changePageWithAnimation(currentPage + 1);
     }
+    // setAnimate(true);
+    // if (currentPage < pages.length - 1) {
+    //   setTimeout(() => {
+    //     setCurrentPage(currentPage + 1);
+    //     setAnimate(false);
+    //   }, 1000); // Duration of the animation
+    // }
   };
 
   const prevPage = () => {
     if (currentPage > 0) {
-      setCurrentPage(currentPage - 1);
+      changePageWithAnimation(currentPage - 1);
     }
+
+    // setAnimate(true);
+    // if (currentPage > 0) {
+    //   setTimeout(() => {
+    //     setCurrentPage(currentPage - 1);
+    //     setAnimate(false);
+    //   }, 1000); // Duration of the animation
+    // }
   };
 
   return (
     <div>
-      <div className="container">
+      <div className={`container ${burnout ? 'erase' : fadeIn ? 'fade-in' : ''}`}>
       <button className="nav-button" onClick={prevPage} disabled={currentPage === 0}> <i className="fas fa-arrow-left"></i> {/* Font Awesome Left Arrow */} </button>      
       <div className="text-area-story">
 
