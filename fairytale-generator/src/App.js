@@ -2,6 +2,7 @@ import React, { useEffect, useState} from 'react'
 import logo from './logo.svg';
 import './App.css';
 import './Animation.css';
+import DomainOfDreamsIcon from './images/DomainOfDreamsIcon.png'
 import FairyTale from "./components/fairy-tale.component";
 import StoryForm from "./components/story-form.component";
 import StoryTextComponent from "./components/story-text.component"
@@ -28,7 +29,10 @@ function App() {
 
   return (
     <div className="App">
-      <h3 className={"logo"}>Domain of Dreams</h3>
+      <div className="header-content"> {/* Container for alignment */}
+        <h3 className={"logo"}>Domain of Dreams</h3>
+        <img className="App-icon" src={DomainOfDreamsIcon} alt="icon" />
+      </div>
       {showStory ? (
         <>
           <StoryForm />
@@ -42,16 +46,6 @@ function App() {
       )}
     </div>
   );
-
-  // return (
-  //   <div className="app">
-  //     <h3 className={"logo"}>Domain of Dreams</h3>
-  //     <StoryForm></StoryForm>
-  //     <FairyTale></FairyTale>
-  //     <SocketComponent></SocketComponent>
-  //     <ImageComponent></ImageComponent>
-  //   </div>
-  // );
 }
 
 export default App;

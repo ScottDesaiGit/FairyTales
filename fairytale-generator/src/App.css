@@ -76,7 +76,7 @@ label {
   display: block;
   padding: 0px;
   margin: 3px;
-  font-size: 32px;
+  font-size: 40px;
 }
 
 
@@ -122,12 +122,11 @@ label {
 }
 
 .logo {
-  color: var(--text_white);
   /*background-color: var(--bg_main);*/
   font-family: "Tangerine", cursive;
   text-align: center;
   font-weight: bold;
-  font-size: 50px;
+  font-size: 60px;
   letter-spacing: 0.02em;
 }
 
@@ -204,12 +203,12 @@ textarea:focus {
   background-color: #7b4397; /* deep purple */
   border: none;
   color: white;
-  padding: 15px 30px;
+  padding: 20px 35px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-family: 'Tangerine';
-  font-size: 30px;
+  font-size: 35px;
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 15px;
@@ -217,7 +216,7 @@ textarea:focus {
   transition: all 0.3s;
   line-height: 1.2;
   box-sizing: border-box;
-  min-width: 20rem;
+  min-width: 23rem;
 }
 
 .button-fairytale:hover {
@@ -288,4 +287,16 @@ textarea:focus {
 
 .hidden {
   display: none;
+}
+
+.App-icon {
+  height: 10vmin; /* Adjust this value as needed */
+  padding-left: 0.4vmin;
+  /* Additional styling */
+}
+
+.header-content {
+  display: flex;
+  align-items: center; /* Align vertically */
+  justify-content: center; /* Center content horizontally */
 }
