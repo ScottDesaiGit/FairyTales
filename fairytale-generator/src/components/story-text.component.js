@@ -18,7 +18,11 @@ const MyComponent = () => {
     const newPages = [];
 
     for (let i = 0; i < words.length; i += wordsPerPage) {
-      newPages.push(words.slice(i, i + wordsPerPage).join(' '));
+      const pageText = words.slice(i, i + wordsPerPage).join(' ');
+      const firstLetter = pageText.charAt(0).toUpperCase();
+      const restOfText = pageText.slice(1);
+
+      newPages.push({ firstLetter, restOfText });
     }
 
     setPages(newPages);
@@ -74,7 +78,18 @@ const MyComponent = () => {
       <div className="text-area-story">
 
         <div className={`story-text-div`} key={currentPage}>
-          {pages[currentPage]}
+          {/* Render each page */}
+          {/* {pages.map((page, index) => (
+              <div key={index} className={currentPage === index ? 'visible' : 'hidden'}> */}
+          {pages.map((page, index) => (
+              <div key={index} className={currentPage === index ? 'story-text-div-visible' : 'hidden'}>
+                  <span className="initial-letter">{page.firstLetter}</span>
+                  {page.restOfText}
+              </div>
+          ))}
+              {/* </div>
+          ))} */}
+          {/* {pages[currentPage]} */}
         </div>
       </div>
       <button className="nav-button" onClick={nextPage} disabled={currentPage === pages.length - 1}>  <i className="fas fa-arrow-right"></i> {/* Font Awesome Right Arrow */}</button>

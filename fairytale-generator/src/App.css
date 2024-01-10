@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
+@import url('https://fonts.cdnfonts.com/css/neue-zier-schrift');
 .App {
   text-align: center;
 }
@@ -58,13 +59,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-  color: var(--text_white);
-}
+
 div {
   display: block;
   text-align: center;
@@ -246,10 +241,7 @@ textarea:focus {
   text-align: center;
 }
 
-.story-text-div {
-  font-size: 40px;
-  line-height: 1.6;
-}
+
 
 .container {
   display: flex;
@@ -275,4 +267,25 @@ textarea:focus {
     color: #808080; /* A darker shade of gray for better visibility */
     cursor: not-allowed; /* Optional: shows a different cursor to indicate the button is disabled */
   }
+}
+
+.initial-letter {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Tangerine', sans-serif;  font-size: 80px;
+  line-height: 0;
+  color: inherit;
+  font-weight: inherit;
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+.story-text-div-visible {
+  font-size: 50px;
+  line-height: 1.6;
+}
+
+.hidden {
+  display: none;
 }
