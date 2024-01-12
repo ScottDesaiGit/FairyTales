@@ -6,7 +6,7 @@ import DomainOfDreamsIcon from './images/DomainOfDreamsIcon.png'
 import FairyTale from "./components/fairy-tale.component";
 import StoryForm from "./components/story-form.component";
 import socket from "./services/socket.service"
-
+import { BrowserRouter, Link } from 'react-router-dom';
 
 function App() {
   useEffect(() => {
@@ -26,24 +26,30 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <div className="header-content"> {/* Container for alignment */}
-        <h3 className={"logo"}>Domain of Dreams</h3>
-        <img className="App-icon" src={DomainOfDreamsIcon} alt="icon" />
-      </div>
-          {showStory ? (
-            <>
-              <StoryForm />
+    <BrowserRouter>
+      <div className="App">
+        <div className="header-content"> {/* Container for alignment */}
+          <a href="/" className={"logo"}>Domain of Dreams</a>
+          {/* <Link to="/"> */}
+          <a href="/">
+            <img className="App-icon" src={DomainOfDreamsIcon} alt="icon" />
+          </a>
+          {/* </Link> */}
+        </div>
+            {showStory ? (
+              <>
+                <StoryForm />
+                </>
+            ) : (
+              <>
+              
               </>
-          ) : (
-            <>
-            
-            </>
-          )}
-          <FairyTale onToggleView={toggleView}/>
+            )}
+            <FairyTale onToggleView={toggleView}/>
 
-          
-    </div>
+            
+      </div>
+    </BrowserRouter>
   );
 }
 

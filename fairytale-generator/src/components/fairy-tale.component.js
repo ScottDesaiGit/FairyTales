@@ -32,7 +32,7 @@ const FairytaleGenerator = ({onToggleView}) => {
     setTimeout(() => {
         setShowVideo(false);
         setIsInvisible(false);
-    }, 8000);
+    }, 8500);
     //Toggle view function
    
    

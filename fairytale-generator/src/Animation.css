@@ -103,8 +103,9 @@
     border: 5px solid #8B4513; /* Dark wood-like color for a fairytale theme */
     border-radius: 15px; /* Rounded corners */
     box-shadow: 0 0 20px #2F4F4F; /* A subtle shadow for depth */
-    width: 60%; /* Adjust width as needed */
-    height: auto; /* Maintain aspect ratio */
+    /* width: 60%; Adjust width as needed */
+	height: 60%;
+    width: auto; /* Maintain aspect ratio */
     margin: 20px auto; /* Center the video */
     display: block; /* To apply margin auto */
 }
