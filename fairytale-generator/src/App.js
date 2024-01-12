@@ -5,8 +5,6 @@ import './Animation.css';
 import DomainOfDreamsIcon from './images/DomainOfDreamsIcon.png'
 import FairyTale from "./components/fairy-tale.component";
 import StoryForm from "./components/story-form.component";
-import StoryTextComponent from "./components/story-text.component"
-import ImageComponent from "./components/image.component"
 import socket from "./services/socket.service"
 
 
@@ -33,17 +31,18 @@ function App() {
         <h3 className={"logo"}>Domain of Dreams</h3>
         <img className="App-icon" src={DomainOfDreamsIcon} alt="icon" />
       </div>
-      {showStory ? (
-        <>
-          <StoryForm />
-          <FairyTale onToggleView={toggleView} />
-        </>
-      ) : (
-        <>
-          <StoryTextComponent />
-          <ImageComponent />
-        </>
-      )}
+          {showStory ? (
+            <>
+              <StoryForm />
+              </>
+          ) : (
+            <>
+            
+            </>
+          )}
+          <FairyTale onToggleView={toggleView}/>
+
+          
     </div>
   );
 }

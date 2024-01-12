@@ -98,3 +98,18 @@
   .fadeIn-right-to-left {
 	animation: fadeIn-right-to-left 1s ease-in forwards;
   }
+
+.fancy-border-video {
+    border: 5px solid #8B4513; /* Dark wood-like color for a fairytale theme */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 20px #2F4F4F; /* A subtle shadow for depth */
+    width: 60%; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin: 20px auto; /* Center the video */
+    display: block; /* To apply margin auto */
+}
+
+.invisible-class {
+    visibility: hidden; /* or 'opacity: 0;' for a fade-out effect */
+	display: none;
+}
