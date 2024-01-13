@@ -87,23 +87,27 @@ const MyComponent = () => {
     <div>
     <div className={`container ${burnout === 'left-to-right' ? 'burnout-left-to-right' : burnout === 'right-to-left' ? 'burnout-right-to-left' : 
     fadeIn === 'left-to-right' ? 'fadeIn-left-to-right' : fadeIn === 'right-to-left' ? 'fadeIn-right-to-left' : ''}`}>
-      <button className="nav-button" onClick={prevPage} disabled={currentPage === 0}> <i className="fas fa-arrow-left"></i> {/* Font Awesome Left Arrow */} </button>      
       <div className="text-area-story">
-
-        <div className={`story-text-div`} key={currentPage}>
-          {pages.map((page, index) => (
-              <div key={index} className={currentPage === index ? 'story-text-div-visible' : 'hidden'}>
-                  <span className="initial-letter">{page.firstLetter}</span>
-                  {page.restOfText}
-              </div>
-          ))}
-
-          <ImageComponent image1={image1} image2={image2} pageNumber={currentPage} />
+        <div className = "nav-and-text">
+        <button className="nav-button" onClick={prevPage} disabled={currentPage === 0}> <i className="fas fa-arrow-left"></i> {/* Font Awesome Left Arrow */} </button>      
+            <div className={`story-text-div`} key={currentPage}>
+              {pages.map((page, index) => (
+                  <div key={index} className={currentPage === index ? 'story-text-div-visible' : 'hidden'}>
+                      <span className="initial-letter">{page.firstLetter}</span>
+                      {page.restOfText}
+                  </div>
+              ))}
+          </div>
+          <button className="nav-button" onClick={nextPage} disabled={currentPage === pages.length - 1}>  <i className="fas fa-arrow-right"></i> {/* Font Awesome Right Arrow */}</button>
         </div>
+        <ImageComponent image1={image1} image2={image2} pageNumber={currentPage} />
       </div>
-      <button className="nav-button" onClick={nextPage} disabled={currentPage === pages.length - 1}>  <i className="fas fa-arrow-right"></i> {/* Font Awesome Right Arrow */}</button>
-    </div>
-    </div>
+    
+      <br></br>
+     
+
+      </div>
+        </div>
   );
 };
 
