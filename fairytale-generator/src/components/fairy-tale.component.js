@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import StoryTextComponent from "../components/story-text.component"
-import ImageComponent from "../components/image.component"
 import BookVideo from '../videos/Pond5Book.mp4'
 
 
@@ -51,7 +50,6 @@ const FairytaleGenerator = ({onToggleView}) => {
         )}
         <div className={visibilityClass}>
                 <StoryTextComponent /* props */ />
-                <ImageComponent /* props */ />
             </div>
         {showVideo && (
             <video  className={`fancy-border-video ${isVideoLoaded ? '' : 'unloaded'}`} 

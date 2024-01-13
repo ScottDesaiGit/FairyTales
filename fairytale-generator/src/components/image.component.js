@@ -1,25 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import socket from "../services/socket.service"; // Import the socket instance
-import "../App.css"
 
-const MyComponent = () => {
-  const [imageUrl, setImageUrl] = useState('');
-
-  useEffect(() => {
-    // Function to handle the message event
-    const handleImage = (newImageUrl) => {
-		setImageUrl(newImageUrl); 
-	  };
-  
-	  // Listen for messages from the server
-	  socket.on('newImage', handleImage);
-  }, []);
+const ImageComponent = ({ image1, image2, pageNumber }) => {
+  const imageToShow = pageNumber <= 1 ? image1 : image2;
 
   return (
     <div>
-      {imageUrl && <img src={imageUrl} alt="FairyTale Description" />}
+      {imageToShow && <img src={imageToShow} alt="FairyTale Image" />}
     </div>
   );
 };
-
-export default MyComponent;
+export default ImageComponent;

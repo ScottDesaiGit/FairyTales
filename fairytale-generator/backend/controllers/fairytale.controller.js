@@ -34,19 +34,22 @@ async function generateFairytale() {
 			if(wordCount % 20 == 0){
 				let currSentence = wordArr.slice((wordCount - 20)).join("")
 				io.emit("message", currSentence)
+				if(wordCount == 40){
+					generateFairyTalePicture(wordArr.join(""), "1")
+				}
 			}
 		});
 	
 		let chatCompletion = await stream.finalChatCompletion();
 		io.emit("message", wordArr.slice(wordCount - (wordCount % 20)).join(""))
-		await generateFairyTalePicture(chatCompletion.choices[0].message.content)
+		await generateFairyTalePicture(chatCompletion.choices[0].message.content, "2")
 	}catch(err){
 		console.log(err)
 	}
   
 }
 
-async function generateFairyTalePicture(fairyTaleStory){
+async function generateFairyTalePicture(fairyTaleStory, pictureNumber){
 	console.log("Generating the image")
 	let prompt = "Generate a singular painting representing the following fairy tale with no text or borders: " + fairyTaleStory
 	console.log(prompt)
@@ -60,7 +63,7 @@ async function generateFairyTalePicture(fairyTaleStory){
 
 		let image_url = response.data[0].url
 		console.log("Image: " + image_url)
-		io.emit("newImage", image_url)
+		io.emit(`newImage${pictureNumber}`, image_url)
 	}catch(err){
 		console.log(err)
 	}

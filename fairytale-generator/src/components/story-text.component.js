@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import socket from "../services/socket.service"; // Import the socket instance
+import ImageComponent from './image.component.js'; // Adjust the path as needed
 
 const MyComponent = () => {
   const [message, setMessage] = useState('');
@@ -8,6 +9,8 @@ const MyComponent = () => {
   const [burnout, setBurnout] = useState(false);
   const [fadeIn, setFadeIn] = useState(false);
   const [tempPage, setTempPage] = useState(null);
+  const [image1, setImage1] = useState('');
+  const [image2, setImage2] = useState('');
 
 
 
@@ -58,6 +61,16 @@ const MyComponent = () => {
     };
   }, [message]);
 
+  useEffect(() => {
+    socket.on('newImage1', newImage => setImage1(newImage));
+    socket.on('newImage2', newImage => setImage2(newImage));
+
+    return () => {
+      socket.off('newImage1');
+      socket.off('newImage2');
+    };
+  }, []);
+
   const nextPage = () => {
     if(currentPage < pages.length - 1){
       changePageWithAnimation(currentPage + 1, 'left-to-right');
@@ -78,18 +91,14 @@ const MyComponent = () => {
       <div className="text-area-story">
 
         <div className={`story-text-div`} key={currentPage}>
-          {/* Render each page */}
-          {/* {pages.map((page, index) => (
-              <div key={index} className={currentPage === index ? 'visible' : 'hidden'}> */}
           {pages.map((page, index) => (
               <div key={index} className={currentPage === index ? 'story-text-div-visible' : 'hidden'}>
                   <span className="initial-letter">{page.firstLetter}</span>
                   {page.restOfText}
               </div>
           ))}
-              {/* </div>
-          ))} */}
-          {/* {pages[currentPage]} */}
+
+          <ImageComponent image1={image1} image2={image2} pageNumber={currentPage} />
         </div>
       </div>
       <button className="nav-button" onClick={nextPage} disabled={currentPage === pages.length - 1}>  <i className="fas fa-arrow-right"></i> {/* Font Awesome Right Arrow */}</button>
