@@ -8,7 +8,6 @@ const MyComponent = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [burnout, setBurnout] = useState(false);
   const [fadeIn, setFadeIn] = useState(false);
-  const [tempPage, setTempPage] = useState(null);
   const [image1, setImage1] = useState('');
   const [image2, setImage2] = useState('');
 

@@ -17,13 +17,41 @@ io.on('connection', (socket) => {
     console.log('A user disconnected');
   });
 });
-async function generateFairytale() {
+
+function generatePrompt(formData){
+	// Start with a basic prompt
+    let prompt = "Write a fairytale";
+
+    // Add details based on the formData provided
+    if (formData.protagonistName) {
+        prompt += ` about ${formData.protagonistName}`;
+        if (formData.protagonistDescription) {
+            prompt += `, a ${formData.protagonistDescription}`;
+        }
+    }else if(formData.protagonistDescription){
+		` about a ${formData.protagonistDescription}`
+	}
+
+    if (formData.setting) {
+        prompt += formData.protagonistName ? ` in a setting of ${formData.setting}` : ` set in ${formData.setting}`;
+    }
+    if (formData.sideCharacters) {
+        prompt += `. Include side characters: ${formData.sideCharacters}`;
+    }
+    if (formData.plotPoints) {
+        prompt += `. The plot should involve: ${formData.plotPoints}`;
+    }
+	return prompt
+}
+
+async function generateFairytale(formData) {
+	let prompt = generatePrompt(formData)
 	let wordCount = 0
 	let wordArr = []
 	try{
 		const stream = await openai.beta.chat.completions.stream({
 		model: 'gpt-3.5-turbo',
-		messages: [{ role: 'user', content: 'Write a fairytale' }],
+		messages: [{ role: 'user', content: prompt}],
 		stream: true,
 		});
 	

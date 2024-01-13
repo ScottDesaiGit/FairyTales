@@ -19,12 +19,6 @@ function App() {
     return () => socket.off('message');
   }, []);
 
-  const [showStory, setShowStory] = useState(true)
-
-  const toggleView = () => {
-    setShowStory(!showStory);
-  };
-
   return (
     <BrowserRouter>
       <div className="App">
@@ -36,7 +30,7 @@ function App() {
           </a>
           {/* </Link> */}
         </div>
-            {showStory ? (
+            {/* {showStory ? (
               <>
                 <StoryForm />
                 </>
@@ -44,8 +38,8 @@ function App() {
               <>
               
               </>
-            )}
-            <FairyTale onToggleView={toggleView}/>
+            )} */}
+            <FairyTale/>
 
             
       </div>
