@@ -99,15 +99,28 @@
 	animation: fadeIn-right-to-left 1s ease-in forwards;
   }
 
+.fancy-border-video.unloaded {
+	/* border: 5px solid transparent; Make border transparent initially */
+    opacity: 0; /* Make video fully transparent initially */
+	display: none;
+	transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
 .fancy-border-video {
     border: 5px solid #8B4513; /* Dark wood-like color for a fairytale theme */
     border-radius: 15px; /* Rounded corners */
     box-shadow: 0 0 20px #2F4F4F; /* A subtle shadow for depth */
     /* width: 60%; Adjust width as needed */
 	height: 60%;
-    width: auto; /* Maintain aspect ratio */
+	min-height: 60%;
+	width: 40%;
+	min-width: 40%;
+    /* width: auto; Maintain aspect ratio */
     margin: 20px auto; /* Center the video */
     display: block; /* To apply margin auto */
+	transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+	opacity: 1;
+
 }
 
 .invisible-class {

@@ -7,13 +7,11 @@ import BookVideo from '../videos/Pond5Book.mp4'
 
 
 const FairytaleGenerator = ({onToggleView}) => {
-  const [fairytale, setFairytale] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
   // Add state for controlling visibility
-  const [showStoryAndImage, setShowStoryAndImage] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
   const [isInvisible, setIsInvisible] = useState(true);
-  const [showButton, setShowButton] = useState(true)
+  const [showButton, setShowButton] = useState(true);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const visibilityClass = isInvisible ? 'invisible-class' : '';
 
 
@@ -42,6 +40,10 @@ const FairytaleGenerator = ({onToggleView}) => {
     // setImageUrl(imageResponse.data.imageUrl);
   };
 
+  const handleVideoLoad = () => {
+    setIsVideoLoaded(true);
+  };
+
   return (
     <div>
         {showButton && (
@@ -52,7 +54,10 @@ const FairytaleGenerator = ({onToggleView}) => {
                 <ImageComponent /* props */ />
             </div>
         {showVideo && (
-            <video className="fancy-border-video" autoPlay loop>
+            <video  className={`fancy-border-video ${isVideoLoaded ? '' : 'unloaded'}`} 
+            autoPlay 
+            loop
+            onLoadedData={handleVideoLoad}>
                 <source src={BookVideo} type="video/mp4" />
             </video>
         )}
