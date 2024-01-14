@@ -3,12 +3,11 @@ module.exports = (app) => {
 
     app.post('/fairytale/generate', async (req, res) => {
         try {
-            // Extract form data from request body
             const formData = req.body;
-
-            // Pass the form data to the controller function
-            const data = await fairytaleController.generateFairytale(formData);
-            res.send(data);
+            const socketId = formData.socketId; // Extract the socketId
+            await fairytaleController.generateFairytale(formData, socketId); // Pass socketId to the controller
+    
+            res.status(200).send("Fairytale generated");
         } catch (error) {
             res.status(500).send(error.message);
         }

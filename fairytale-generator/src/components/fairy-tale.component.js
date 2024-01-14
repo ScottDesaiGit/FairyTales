@@ -3,6 +3,7 @@ import axios from 'axios';
 import StoryTextComponent from "../components/story-text.component"
 import StoryFormComponent from "../components/story-form.component"
 import BookVideo from '../videos/Pond5Book.mp4'
+import { getSocketId } from '../services/socket.service';
 
 
 
@@ -16,7 +17,19 @@ const FairytaleGenerator = () => {
 
 
   const generateFairytale = async (formData) => {
-    axios.post('http://localhost:5000/fairytale/generate', formData);
+
+
+    // Retrieve the socketId using the imported function
+    const socketId = getSocketId();
+
+    // Append the socketId to your formData
+    const dataWithSocketId = {
+        ...formData,
+        socketId: socketId
+    };
+
+    // Make the POST request with the updated data
+    axios.post('http://localhost:5000/fairytale/generate', dataWithSocketId);
     
     setShowButton(false);
     // Hide story and image, show video
