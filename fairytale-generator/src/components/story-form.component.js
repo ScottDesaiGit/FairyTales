@@ -30,6 +30,10 @@ const StoryForm = (props) => {
 
   return (
     <div>
+      <p className="fairytale-form-note">
+        📜 Every field is optional in your fairytale
+      </p>
+
       <label>
         Protagonist Name:
         <input type="text" name="protagonistName" value={protagonistName} onChange={handleProtagonistNameChange} />
@@ -62,7 +66,7 @@ const StoryForm = (props) => {
       </label>
       <br />
 
-      <button   className="button-fairytale" onClick={handleSubmit}>Submit Story</button>
+      <button   className="button-fairytale" onClick={handleSubmit}>Generate Story</button>
     </div>
   );
 };

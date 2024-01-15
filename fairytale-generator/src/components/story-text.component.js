@@ -16,7 +16,7 @@ const MyComponent = () => {
   // Function to split the message into pages
   const splitIntoPages = (updatedMessage) => {
     const words = updatedMessage.split(/\s+/);
-    const wordsPerPage = 150;
+    const wordsPerPage = 100;
     const newPages = [];
 
     for (let i = 0; i < words.length; i += wordsPerPage) {

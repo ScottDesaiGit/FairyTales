@@ -292,7 +292,7 @@ textarea:focus {
 }
 
 .story-text-div-visible {
-  font-size: 50px;
+  font-size: 45px;
   line-height: 1.6;
 }
 
@@ -310,4 +310,15 @@ textarea:focus {
   display: flex;
   align-items: center; /* Align vertically */
   justify-content: center; /* Center content horizontally */
+}
+
+.fairytale-form-note {
+  font-size: 40px
+}
+
+.image-container img{
+  max-height: 50vh; /* Maximum height is 100% of the viewport height */
+  max-width: 100vw; /* Maximum width is 100% of the viewport width */
+  object-fit: contain; /* Resize the image to fit while maintaining aspect ratio */
+  overflow: hidden; /* Adds scrollbar if the image overflows */
 }
