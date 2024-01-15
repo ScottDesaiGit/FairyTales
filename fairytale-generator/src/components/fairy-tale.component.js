@@ -29,7 +29,7 @@ const FairytaleGenerator = () => {
     };
 
     // Make the POST request with the updated data
-    axios.post('http://localhost:5000/fairytale/generate', dataWithSocketId);
+    axios.post('http://3.99.155.96:5000/fairytale/generate', dataWithSocketId);
     
     setShowButton(false);
     // Hide story and image, show video
