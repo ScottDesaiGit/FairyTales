@@ -52,8 +52,6 @@
 
 body {
   margin: 0;
-  /*background-color: var(--bg_main);*/
-  /*background-image: url("https://www.myfreetextures.com/wp-content/uploads/2011/06/another-rough-old-and-worn-parchment-paper.jpg");*/
   background-image: url("images/Continents.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -313,7 +311,7 @@ textarea:focus {
 }
 
 .fairytale-form-note {
-  font-size: 40px
+  font-size: 35px
 }
 
 .image-container img{
