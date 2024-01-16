@@ -29,7 +29,7 @@ const FairytaleGenerator = () => {
     };
 
     // Make the POST request with the updated data
-    axios.post('https://15.157.109.72:5000/fairytale/generate', dataWithSocketId);
+    axios.post('https://api.domain-of-dreams.com/fairytale/generate', dataWithSocketId);
     
     setShowButton(false);
     // Hide story and image, show video
