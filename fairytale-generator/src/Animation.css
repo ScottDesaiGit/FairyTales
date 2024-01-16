@@ -110,7 +110,7 @@
 	border-width: 20px 15px; /* Top and bottom borders are thicker */
     border-style: solid;
     border-color: transparent;
-    border-image-source: url('images/OrnateBorder.png');
+    border-image-source: url('https://domainofdreams.s3.ca-central-1.amazonaws.com/OrnateBorder.png');
     border-image-slice: 10%;
     border-image-repeat: round;
     position: relative;

@@ -1,7 +1,6 @@
-import React, { useEffect, useState} from 'react'
-import logo from './logo.svg';
 import './App.css';
 import './Animation.css';
+import React, { useEffect, useState} from 'react'
 import DomainOfDreamsIcon from './images/DomainOfDreamsIcon.png'
 import FairyTale from "./components/fairy-tale.component";
 import StoryForm from "./components/story-form.component";
