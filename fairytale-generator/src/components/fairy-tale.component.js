@@ -59,7 +59,10 @@ const FairytaleGenerator = () => {
             <video  className={`fancy-border-video ${isVideoLoaded ? '' : 'unloaded'}`} 
             autoPlay 
             loop
-            onLoadedData={handleVideoLoad}>
+            muted
+            playsInline
+            onLoadedData={handleVideoLoad}
+            style={{ pointerEvents: 'none' }}>
                 <source src= 'https://domainofdreams.s3.ca-central-1.amazonaws.com/Pond5Book.mp4' type="video/mp4" />
             </video>
         )}

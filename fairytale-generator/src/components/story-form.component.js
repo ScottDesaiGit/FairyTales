@@ -66,7 +66,7 @@ const StoryForm = (props) => {
       </label>
       <br />
 
-      <button   className="button-fairytale" onClick={handleSubmit}>Generate Story</button>
+      <button   className="button-fairytale" onClick={handleSubmit}>Generate Fairy Tale</button>
     </div>
   );
 };

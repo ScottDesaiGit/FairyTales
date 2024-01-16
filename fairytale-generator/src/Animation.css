@@ -131,3 +131,14 @@
     visibility: hidden; /* or 'opacity: 0;' for a fade-out effect */
 	display: none;
 }
+
+@media only screen and (max-width: 600px) {
+	.fancy-border-video {
+		border-width: 10px 7px;
+		height: 80%;
+		min-height: 80%;
+		width: 60%;
+		min-width: 60%;
+	}
+
+}
