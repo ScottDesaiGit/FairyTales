@@ -205,7 +205,7 @@ input[type="text"]:focus, textarea:focus {
 
   body {
       font-size: 0.75rem; /* Further reduced */
-      background-image: url("https://domainofdreams.s3.ca-central-1.amazonaws.com/MobilePhoneBckground.jpg");
+      background-image: url("https://domainofdreams.s3.ca-central-1.amazonaws.com/MobilePhoneBackground.png");
       background-size: 100% auto; /* Width is 100%, height auto */
       background-position: center top; /* Center the image horizontally */
   }
