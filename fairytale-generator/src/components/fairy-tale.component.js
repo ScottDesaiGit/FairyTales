@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import StoryTextComponent from "../components/story-text.component"
 import StoryFormComponent from "../components/story-form.component"
-import BookVideo from '../videos/Pond5Book.mp4'
+// import BookVideo from '../videos/Pond5Book.mp4'
 import { getSocketId } from '../services/socket.service';
 
 
@@ -29,7 +29,7 @@ const FairytaleGenerator = () => {
     };
 
     // Make the POST request with the updated data
-    axios.post('http://localhost:5000/fairytale/generate', dataWithSocketId);
+    axios.post('https://api.domain-of-dreams.com/fairytale/generate', dataWithSocketId);
     
     setShowButton(false);
     // Hide story and image, show video
@@ -59,8 +59,11 @@ const FairytaleGenerator = () => {
             <video  className={`fancy-border-video ${isVideoLoaded ? '' : 'unloaded'}`} 
             autoPlay 
             loop
-            onLoadedData={handleVideoLoad}>
-                <source src={BookVideo} type="video/mp4" />
+            muted
+            playsInline
+            onLoadedData={handleVideoLoad}
+            style={{ pointerEvents: 'none' }}>
+                <source src= 'https://domainofdreams.s3.ca-central-1.amazonaws.com/Pond5Book.mp4' type="video/mp4" />
             </video>
         )}
     </div>

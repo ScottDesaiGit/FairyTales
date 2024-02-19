@@ -110,7 +110,7 @@
 	border-width: 20px 15px; /* Top and bottom borders are thicker */
     border-style: solid;
     border-color: transparent;
-    border-image-source: url('images/OrnateBorder.png');
+    border-image-source: url('https://domainofdreams.s3.ca-central-1.amazonaws.com/OrnateBorder.png');
     border-image-slice: 10%;
     border-image-repeat: round;
     position: relative;
@@ -130,4 +130,15 @@
 .invisible-class {
     visibility: hidden; /* or 'opacity: 0;' for a fade-out effect */
 	display: none;
+}
+
+@media only screen and (max-width: 600px) {
+	.fancy-border-video {
+		border-width: 10px 7px;
+		height: 80%;
+		min-height: 80%;
+		width: 60%;
+		min-width: 60%;
+	}
+
 }
