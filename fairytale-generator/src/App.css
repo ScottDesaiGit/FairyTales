@@ -21,10 +21,11 @@
 
 body {
   margin: 0;
-  background-image: url("https://domainofdreams.s3.ca-central-1.amazonaws.com/Continents.jpg");
+  background-image: url("https://domainofdreams.s3.ca-central-1.amazonaws.com/Adjust+these+pieces.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position: center top;
   font-family: "Tangerine";
 }
 

@@ -80,6 +80,14 @@ async function generateFairytale(formData, socketId) {
 async function generateFairyTalePicture(fairyTaleStory, pictureNumber, socketId){
 	console.log("Generating the image")
 	let prompt = "Generate a singular painting representing the following fairy tale with no text or borders: " + fairyTaleStory
+
+	// Truncate fairyTaleStory to 4000 characters without cutting off in the middle of a word
+    if (fairyTaleStory.length > 4000) {
+        fairyTaleStory = fairyTaleStory.slice(0, 4000);
+        let lastSpace = fairyTaleStory.lastIndexOf(' ');
+        fairyTaleStory = fairyTaleStory.slice(0, lastSpace);
+    }
+	
 	console.log(prompt)
 	try{
 		let response = await openai.images.generate({
