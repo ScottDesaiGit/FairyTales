@@ -6,7 +6,7 @@ const OpenAI = require('openai');
 const io = require("../server")
 
 const openai = new OpenAI({
-  apiKey: "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", // This is the default and can be omitted
+  apiKey: process.env.OPENAPI_API_KEY // This is the default and can be omitted
 });
 
 io.on('connection', (socket) => {
